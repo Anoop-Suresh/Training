@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="traffic.css">
+    <style>
+    button{
+	background: lightblue;
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+
+}
+button:hover {
+    background-color: black;
+    color:white;
+}</style>
+
+</head>
+<body>
+    <center>
+
+	<svg width="100" height="100">
+		<circle cx="50" cy="50" r="40" style="fill:black;" id="red"/>
+	</svg> <br>
+	<svg width="100" height="100">
+		<circle cx="50" cy="50" r="40" style="fill:black;" id="yellow"/>
+	</svg><br>
+	<svg width="100" height="100">
+		<circle cx="50" cy="50" r="40" style="fill:black;" id="green"/>
+	</svg><br>
+
+	<button class="but1" value="Red" onclick="red1()">Red</button>
+	<button class="but1" value="Green" onclick="green1()">Green</button>
+	<button class="but1" value="Yellow" onclick="blink()">Yellow</button><br>
+
+	<button value="Auto" onclick="Auto()">Auto</button>
+	<button value="Stop" onclick="stop()">Stop</button>
+
+	<script type="text/javascript">
+
+	var t,r;
+
+		function Auto(){
+
+				r=setInterval(red1,3000);
+				red1();
+
+		}
+		function yellow1(){
+					if(yellow.style.fill=="black")
+					{
+					yellow.style.fill='yellow';
+					red.style.fill='black';
+					green.style.fill='black';
+					}
+					else{
+					yellow.style.fill='black';
+					}
+
+		}
+		function red1(){
+		            clearInterval(t);
+					if(red.style.fill=="black" && yellow.style.fill=="black"){
+					red.style.fill='red';
+					yellow.style.fill='black';
+					green.style.fill='black';
+					}
+					else if(red.style.fill=="red" ){
+					yellow1();
+
+					}
+					else if(yellow.style.fill=="yellow"){
+					green1();
+
+					}
+
+
+
+		}
+		function green1(){
+		            clearInterval(t);
+					if(green.style.fill=="black"){
+					yellow.style.fill='black';
+					red.style.fill='black';
+					green.style.fill='green';
+					}
+
+
+		}
+		function blink(){
+			t =setInterval(yellow1,500);
+			yellow1();
+		}
+		function stop(){
+					clearInterval(t);
+					clearInterval(r);
+					yellow.style.fill='black';
+					red.style.fill='black';
+					green.style.fill='black';
+		}
+
+	</script>
+    </center>
+</body>
+</html>

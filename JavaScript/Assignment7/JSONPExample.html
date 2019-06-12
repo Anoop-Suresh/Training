@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSONP</title>
+</head>
+<body>
+<div id="content" ></div>
+<table>
+    <tr><td>Name:</td><td><input type="text" name=""></td></tr>
+    <tr><td>Email:</td><td><input type="Email" name=""></td></tr>
+    <tr><td>country:</td><td><select id="ld" onclick="sel()"></select></td></tr>
+    <tr><td>region</td><td><select id="state"></select></td></tr>
+        <tr><td colspan="2"><button type="Submit" onclick="sub()" style="text-align:center;width:150px;">Register</button></td></tr>
+
+</table>
+<script>
+
+    let country=function(data){
+    let dropdown = document.getElementById('ld');
+dropdown.length = 0;
+
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Choose country';
+
+dropdown.add(defaultOption);
+dropdown.selectedIndex = 0;
+   let option;
+   for (let i = 0; i < data.length; i++) {
+     option = document.createElement('option');
+     option.text = data[i].name;
+     option.value = data[i].code;
+     dropdown.add(option);
+   }
+      }
+
+function sel(){
+let dropdown = document.getElementById('state');
+dropdown.length = 0;
+
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Choose State';
+
+dropdown.add(defaultOption);
+dropdown.selectedIndex = 0;
+let sl=document.getElementById("ld");
+const url = 'http://battuta.medunes.net/api/region/'+sl.value+'/all/?key=0c5882d3537bb027ab201d08bbcde432'
+
+const request = new XMLHttpRequest();
+request.open('GET', url, true);
+
+request.onload = function() {
+ if (request.status === 200) {
+   const data = JSON.parse(request.responseText);
+   let option;
+   for (let i = 0; i < data.length; i++) {
+     option = document.createElement('option');
+     option.text = data[i].region;
+     option.value = data[i].code;
+     dropdown.add(option);
+   }
+  } else {
+ }
+}
+
+request.onerror = function() {
+ console.error('An error occurred fetching the JSON from ' + url);
+};
+
+request.send();
+}
+
+
+
+
+
+</script>
+<script src=http://battuta.medunes.net/api/country/all/?key=36e9feb192ef2bfa911b66470637e20d&callback=country></script>
+
+</body>
+</html>
