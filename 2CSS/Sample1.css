@@ -1,0 +1,155 @@
+*{
+margin:0;
+padding:0;}
+header{
+Background-color:#2f2f2f;
+height:100px;
+width:100%;}
+
+.Menu{
+            width:100%;
+			overflow: hidden;
+			height: 90px;
+			line-height: 70px;
+			background: #2f2f2f;
+			float:right;
+			width:50%;
+ }
+
+ .Menu li{
+            float: left;
+			width: 100px;
+			height: 70px;
+			line-height: 70px;
+			text-align: center;
+			list-style: none;}
+.Menu a{
+color:white;
+text-decoration:none;}
+
+
+.Main1{
+			height: 240px;
+			width: 100%;
+			background-color: #e6e6e6;
+
+		}
+		.Row1{
+			height: 220px;
+			width:680px;
+			background-color: transparent;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.container1_1{
+			float: left;
+			height: 200px;
+			width:300px ;
+			background-color: transparent;
+			text-align: justify;
+			padding: 10px;
+			box-sizing: border-box;
+
+
+
+		}
+		.container1_2{
+			float: right;
+			height: 200px;
+			width: 350px;
+			background-color: transparent;
+
+
+		}
+
+		.main2{
+			height: 400px;
+			width: 100%;
+			background-color: transparent;
+
+		}
+		.base2{
+			height: 300px;
+			width:700px;
+			background-color: transparent;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.main2_1{
+			float: left;
+			height: 270px;
+			width:220px ;
+			margin-right: 20px;
+			text-align: left;
+
+
+		}
+		.main2_2{
+			float: left;
+			height: 270px;
+			width: 220px;
+			text-align: left;
+
+
+		}
+		.main2_3{
+			float: right;
+			height: 270px;
+			width: 220px;
+			text-align: left;
+
+
+		}
+		.image1{
+			height: 150px;
+			width: 220px;
+			background-color: black;
+		}
+		.im1{
+			height: 150px;
+			width: 220px;
+		}
+
+			.button{
+			border:none;
+			color: white;
+			width: 100px;
+			font-size: 10px;
+			padding: 10px 16px;
+			background-color: orange;
+		}
+
+
+.f_container{
+			padding: 15px;
+			height: 180px;
+			width:650px;
+		}
+		.f{
+			float: left;
+			height: 180px;
+			width: 200px;
+			text-align: left;
+
+		}
+		.f li{
+			list-style: none;
+			color: white;
+			text-align: left;
+			padding: 1px;
+		}
+		.f img{
+			height: 20px;
+			width: 20px;
+			margin-right: 10px;
+		}
+		.f a{
+			text-decoration: none;
+			color: white;
+		}
+
+		footer {
+			background-color:black ;
+			width: 100%;
+			height: 100%;
+		}

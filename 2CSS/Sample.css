@@ -1,0 +1,108 @@
+header{
+	    background-color:  #333333;
+	    padding:30px;
+        color:white;
+        }
+
+        .Horizon{
+        list-style-type:none;
+        padding:0;
+        margin:0;
+        overflow: hidden;
+        background-color:grey;
+        }
+
+        p{
+        padding-left: 104px;
+	    padding-right: 0px;
+	    margin-left: 15px;
+	    font:Arial;}
+
+        .Horizon li{
+        float:left;
+        border-right:1px solid #bbb}
+
+        .Horizon li a{
+        display:block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        .Horizon li a:hover {
+        background-color: lightblue;}
+        .Main{
+        float:left;
+        width:70%;
+        }
+        .Sub1{
+        padding:0px;
+        margin:10px;
+        height:130px;
+        background-color:white;
+        width:75%;
+        border-bottom:1px solid grey;
+
+        }
+
+        .blank1{
+        height:110px;
+        background-color:grey;
+        width:15%;
+        float:left}
+
+        .Side{
+        padding:0px;
+        margin:0px;
+        background-color:#d9d9d9;
+        width:25%;
+        float:right;
+        height:470px;}
+
+        .Vertical{
+	margin-top: -20px;
+	padding: 30px;
+	list-style-type:none;
+	display:block;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+	overflow: hidden;
+}
+
+        .Row1{
+        list-style-type:none;
+        width:30%
+        padding:0px;
+        margin-left:0px;
+        height:150px;
+        }
+
+        .Row1 li{
+        padding: 8px;
+        }
+
+        .Row2{
+        padding:10px;
+        height:300px;}
+
+        .Last{
+        padding:0px;
+        margin:0px;
+        font:Arial;
+        }
+
+        footer{
+        color:white;
+        text-align:center;
+	position: fixed;
+	left: 0 ;
+	bottom: 0;
+	height:40px ;
+	width:100%;
+	padding-top:10px;
+	background-color:#333333;
+
+}
