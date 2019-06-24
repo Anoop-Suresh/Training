@@ -1,0 +1,5 @@
+n=input("Enter the numbers seperated by commas:")
+List=n.split(",")
+print("List is",List)
+Touple=tuple(List)
+print("Touple is",Touple)
