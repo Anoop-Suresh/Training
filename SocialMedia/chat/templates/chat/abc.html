@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+       <span ></span>{{ user.id }}<br>
+		{% for friend in friends %}
+       <button data-pk="{{ friend.user.pk }}" data-user="{{ user.id }}" class="link" onclick="fire(this)">{{ friend.user.username }}</button><br>
+       Friends Id : {{ friend.user.id }} <br>
+		{% endfor %}
+
+
+    <script>
+    function fire(e) {
+            var min = Math.min(e.getAttribute('data-pk'), e.getAttribute('data-user'));
+            var max = Math.max(e.getAttribute('data-pk'), e.getAttribute('data-user'));
+            window.location.pathname = '/chat/' + min + 'and' + max;
+<!--            console.log(min,max)-->
+<!--  console.log(e.getAttribute('data-pk') + e.getAttribute('data-user'));-->
+    }
+
+    </script>
+
+
+</body>
+
+    {% endblock %}

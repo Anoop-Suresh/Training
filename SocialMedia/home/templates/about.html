@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if profile.profile.image %}
+
+<img src=" {{ profile.profile.image.url }} " width="200px" height="200px"><br>
+    {% endif %}
+
+			<small><a class='btn btn-primary' href="{% url 'friendrequest' pk=profile.pk %}">Add Friend</a></small>
+
+			<small><a class="btn btn-warning" href="{% url 'cancel' pk=profile.pk %}">Cancel Request</a></small>
+
+
+
+<br>
+<p> Name : {{ profile.profile.name }}</p><br>
+<p>Email : {{ profile.profile.email }}</p><br>
+<p>Phone :{{ profile.profile.phone }}</p>
+
+
+{% endblock %}

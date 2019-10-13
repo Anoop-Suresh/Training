@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!--<h2>Add new Post</h2>-->
+<!--    <form method="post" class="post-form" enctype="multipart/form-data">{% csrf_token %}-->
+<!--        {{form.as_p}}-->
+<!--        <button type="submit" class="save btn btn-default">Upload</button>-->
+<!--    </form>-->
+
+<!--<div class="post">-->
+<!--    <h1>New updates</h1>-->
+<!--            {% for post in posts %}-->
+<!--    <h2><a href="{% url 'list' pk=post.author.profile.pk %}">{{ post.author.profile.name }}</a></h2>-->
+<!--    <h3><a href="{% url 'list' pk=post.pk %}" name="id" id="id">{{ post.title }}</a></h3>-->
+<!--    <p>{{ post.text }}</p>-->
+<!--    <p>Published:{{ post.published_date|linebreaksbr }}</p>-->
+
+<!--    {% endfor %}-->
+ {{ image.timestamp }}
+
+
+
+
+     {% for image in image %}
+        <h2><a href="{% url 'list' pk=image.author.profile.pk %}">{{ image.author.profile.name }}</a></h2>
+
+    <h2>{{ image.title }}</h2>
+    {% if image.cover %}
+    <img src="{{ image.cover.url}}" alt="{{ image.title }}" width="200px" height="200px">
+    {% endif %}
+<br>
+            <button type="submit" class="btn btn-primary" name="post_id" value="{{image.id}}">Like</button></div>
+
+    {% endfor %}
+
+<div>
+    {% if image.has_previous %}
+    <a href="?page=1"><<</a>
+    <a href="?page={{ image.previous_page_number }}"><</a>
+    {% endif %}
+{% for num in image.paginator.page_range %}
+    {% if image.number == num %}
+    <strong>{{ num }}</strong>
+    {% else %}
+    {{ num }}
+    {% endif %}
+
+{% endfor %}
+
+     {% if image.has_next %}
+    <a href="?page={{ image.next_page_number }}">></a>
+    <a href="?page={{ image.paginator.num_pages }}">>></a>
+
+    {% endif %}
+</div>
+    {% endblock %}
